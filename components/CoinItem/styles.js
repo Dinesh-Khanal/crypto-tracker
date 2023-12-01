@@ -13,8 +13,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: "grey",
-    gap: 12,
-    paddingBottom: 12,
+    padding: 12,
   },
   rankContainer: {
     backgroundColor: "#585858",
@@ -23,7 +22,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   rank: {
-    fontWeight: "vold",
+    fontWeight: "bold",
     color: "white",
   },
   text: {

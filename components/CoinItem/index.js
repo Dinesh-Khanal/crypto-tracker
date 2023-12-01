@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./styles";
 import { AntDesign } from "@expo/vector-icons";
 
-export default function Index() {
+export default function Index({ marketCoin }) {
   return (
     <View style={styles.coinContainer}>
       <Image
@@ -11,15 +11,15 @@ export default function Index() {
         //   uri: "https://e7.pngegg.com/pngimages/306/534/png-clipart-bitcoin-bitcoin.png",
         // }}
         source={require("../../assets/image/bitcoin-15510.png")}
-        style={{ height: 80, width: 80 }}
+        style={{ height: 60, width: 60 }}
       />
       <View>
-        <Text style={styles.title}>Bitcoin</Text>
-        <View style={{ flexDirection: "row" }}>
+        <Text style={styles.title}>{marketCoin.name}</Text>
+        <View style={{ flexDirection: "row", minWidth: 150 }}>
           <View style={styles.rankContainer}>
-            <Text style={styles.rank}>1</Text>
+            <Text style={styles.rank}>{marketCoin.market_cap_rank}</Text>
           </View>
-          <Text style={styles.text}>BTC</Text>
+          <Text style={styles.text}>{marketCoin.symbol}</Text>
           <AntDesign
             name="caretdown"
             size={16}
