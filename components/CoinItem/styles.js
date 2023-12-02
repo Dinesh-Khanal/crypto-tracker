@@ -2,18 +2,17 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   title: {
-    fontWeight: "bold",
+    fontWeight: "400",
     color: "white",
-    fontSize: 24,
+    fontSize: 18,
   },
   coinContainer: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: "grey",
-    padding: 12,
+    paddingVertical: 16,
   },
   rankContainer: {
     backgroundColor: "#585858",
@@ -26,8 +25,13 @@ const styles = StyleSheet.create({
     color: "white",
   },
   text: {
-    color: "white",
+    color: "#88c",
     marginRight: 5,
+  },
+  symbol: {
+    color: "#88c",
+    marginRight: 5,
+    textTransform: "uppercase",
   },
 });
 
