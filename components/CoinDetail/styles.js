@@ -23,6 +23,14 @@ const styles = StyleSheet.create({
   cPrice: {
     color: "white",
     fontSize: 30,
+    letterSpacing: 1,
+  },
+  priceChange: {
+    flexDirection: "row",
+    padding: 8,
+    borderRadius: 8,
+    backgroundColor: "grey",
+    gap: 5,
   },
 });
 export default styles;

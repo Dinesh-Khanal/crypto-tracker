@@ -1,5 +1,5 @@
 import { View, Text, Image } from "react-native";
-import { Ionicons, EvilIcons } from "@expo/vector-icons";
+import { Ionicons, EvilIcons, AntDesign } from "@expo/vector-icons";
 import React from "react";
 import styles from "./styles";
 export default function Index({ coin }) {
@@ -7,6 +7,7 @@ export default function Index({ coin }) {
     market_data: {
       market_cap_rank: rank,
       current_price: { usd: cprice },
+      price_change_percentage_24h: changeP,
     },
     name,
   } = coin;
@@ -27,7 +28,26 @@ export default function Index({ coin }) {
         <EvilIcons name="user" size={36} color="white" />
       </View>
       <Text style={styles.cname}>{name}</Text>
-      <Text style={styles.cPrice}>{cprice} US$</Text>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          width: "100%",
+        }}
+      >
+        <Text style={styles.cPrice}>{cprice} US$</Text>
+        <View style={styles.priceChange}>
+          <AntDesign
+            name={changeP < 0 ? "caretdown" : "caretup"}
+            size={16}
+            color="white"
+          />
+          <Text style={{ color: "white", fontSize: 18 }}>
+            {changeP.toFixed(2)}%
+          </Text>
+        </View>
+      </View>
     </>
   );
 }
