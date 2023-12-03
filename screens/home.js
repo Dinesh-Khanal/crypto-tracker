@@ -12,10 +12,10 @@ export default function HomeScreen({ navigation }) {
         data={cryptoCurrencies}
         renderItem={({ item }) => <CoinItem marketCoin={item} />}
       />
-      {/* <Button
+      <Button
         title="Go to detail"
         onPress={() => navigation.navigate("Detail")}
-      /> */}
+      />
       <StatusBar style="light" />
     </SafeAreaView>
   );
