@@ -32,5 +32,14 @@ const styles = StyleSheet.create({
     backgroundColor: "grey",
     gap: 5,
   },
+  input: {
+    color: "white",
+    height: 40,
+    margin: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: "white",
+    padding: 10,
+    fontSize: 16,
+  },
 });
 export default styles;

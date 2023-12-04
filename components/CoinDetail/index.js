@@ -1,6 +1,6 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TextInput } from "react-native";
 import { Ionicons, EvilIcons, AntDesign } from "@expo/vector-icons";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./styles";
 export default function Index({ coin }) {
   const {
@@ -11,6 +11,12 @@ export default function Index({ coin }) {
     },
     name,
   } = coin;
+  const [coinVal, setCoinVal] = useState("1");
+  const [usdVal, setUsdVal] = useState(cprice.toString());
+  const coinToUsd = (value) => {
+    setCoinVal(value);
+    setUsdVal((parseFloat(value) * cprice).toString());
+  };
   return (
     <>
       <View style={styles.headerContainer}>
@@ -46,6 +52,27 @@ export default function Index({ coin }) {
           <Text style={{ color: "white", fontSize: 18 }}>
             {changeP.toFixed(2)}%
           </Text>
+        </View>
+      </View>
+      <View style={{ flexDirection: "row", marginBottom: 8 }}>
+        <View style={{ flexDirection: "row", flex: 1 }}>
+          <Text style={{ color: "white", alignSelf: "center" }}>
+            {coin.symbol.toUpperCase()}
+          </Text>
+          <TextInput
+            style={styles.input}
+            value={coinVal}
+            keyboardType="numeric"
+            onChangeText={coinToUsd}
+          />
+        </View>
+        <View style={{ flexDirection: "row", flex: 1 }}>
+          <Text style={{ color: "white", alignSelf: "center" }}>USD</Text>
+          <TextInput
+            style={styles.input}
+            value={usdVal}
+            keyboardType="numeric"
+          />
         </View>
       </View>
     </>
